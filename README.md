@@ -7,27 +7,30 @@ Este repositório implementa um pipeline ETL utilizando Apache Airflow e Amazon 
 
 Para começar, clone o repositório para sua máquina local:
 
-```git clone https://github.com/SamuelEngMek/pipeline-etl-airflow-s3.git```
+```
+git clone https://github.com/SamuelEngMek/pipeline-etl-airflow-s3.git
+```
 
 ### Estrutura do Projeto
 
 O projeto é composto por uma estrutura organizada em diretórios e arquivos necessários para a execução do pipeline:
 
-**pipeline-etl-airflow-s3/ 
-├── dags/ 
-│ ├── `ingestao_dag.py` 
-│ └── `etl_dag.py `
+```
+pipeline-etl-airflow-s3/
+├── dags/
+│ ├── ingestao_dag.py 
+│ └── etl_dag.py 
 ├── scripts/ 
-│ ├── `ingestao.py `
-│ └── `etl.py `
-├── `.gitignore `
-├── `docker-compose.yml `
-├── `Dockerfile` 
-├── `requirements.txt `
-├── `inicio.sh `
-├── `variaveis.sh` 
-└── `fim.sh`**
-
+│ ├── ingestao.py 
+│ └── etl.py 
+├── .gitignore 
+├── docker-compose.yml
+├── Dockerfile 
+├── requirements.txt 
+├── inicio.sh
+├── variaveis.sh 
+└── fim.sh
+```
 
 ## Descrição dos Componentes
 
@@ -45,17 +48,23 @@ O projeto é composto por uma estrutura organizada em diretórios e arquivos nec
 ### Inicializar o Ambiente
 
 1. **Definir permissões de execução**: Para garantir que o arquivo seja executável, você pode rodar:
-```chmod +x inicio.sh variaveis.sh fim.sh```
+```
+chmod +x inicio.sh variaveis.sh fim.sh
+```
 
 2. **iniciar o projeto**: execute o script `inicio.sh`, que cria as pastas necessárias para o Airflow, sobe a imagem Docker e inicia o serviço do Airflow:
 
-```bash inicio.sh```
+```
+bash inicio.sh
+```
 
 ### Configurar Variáveis de Ambiente
 
 Antes de rodar os DAGs, você precisará configurar as credenciais e outras informações necessárias para o Airflow. O script `variaveis.sh` é responsável por isso. Altere as credenciais no arquivo de acordo com seu ambiente. Após isso, execute-o da seguinte forma:
 
-```bash variaveis.sh```
+```
+bash variaveis.sh
+```
 
 Este script define as variáveis de ambiente no Airflow, como as credenciais AWS (chave de acesso, chave secreta, token de sessão), a região, o nome do bucket S3 e a chave KMS
 
@@ -64,7 +73,9 @@ Este script define as variáveis de ambiente no Airflow, como as credenciais AWS
 Após configurar as variáveis, é hora de ativar as DAGs no Airflow:
 1. **Acessar a interface do Airflow**: O Airflow estará acessível através da porta **8080** do seu navegador. Para acessá-lo, digite:
 
-```http://localhost:8080```
+```
+http://localhost:8080
+```
 
 2. **Ativar as DAGs**: Na interface do Airflow, você pode ativar as DAGs manualmente ou esperar que elas sejam executadas conforme o agendamento.
 
@@ -76,8 +87,10 @@ Agora que o Airflow está configurado e as variáveis estão definidas, você po
 
 Depois que os DAGs tiverem sido executados ou caso queira encerrar o ambiente, execute o script fim.sh para parar o contêiner Docker:
 
-```bash fim.sh```
+```
+bash fim.sh
+```
 
 ## Contribuições
 
-Sinta-se à vontade para fazer contribuições ou sugerir melhorias para este projeto! 
+Sinta-se à vontade para fazer contribuições ou sugerir melhorias para este projeto!
