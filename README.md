@@ -7,7 +7,7 @@ Este repositório implementa um pipeline ETL utilizando Apache Airflow e Amazon 
 
 Para começar, clone o repositório para sua máquina local:
 
-```git clone https://github.com/seu-usuario/pipeline-etl-airflow-s3.git```
+```git clone https://github.com/SamuelEngMek/pipeline-etl-airflow-s3.git```
 
 ### Estrutura do Projeto
 
